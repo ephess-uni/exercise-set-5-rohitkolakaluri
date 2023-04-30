@@ -19,3 +19,20 @@ output_file = output_dir / "ex_5_4-processed.csv"
 # Process the input data using numpy
 
 # Save the result to output_file
+import numpy as np
+from pathlib import Path
+from src.util import get_project_root
+
+
+root_directory = get_project_root()
+infile = root_directory / 'data' / 'ex_5_4-data.csv'
+outfile = root_directory / 'outputs' / 'ex_5_4-processed.csv'
+
+
+data = np.loadtxt(infile, delimiter=',')
+
+
+data[data < 0] = 0
+
+
+np.savetxt(outfile, data, delimiter=',')
