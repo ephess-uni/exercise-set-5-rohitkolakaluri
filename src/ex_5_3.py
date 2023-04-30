@@ -16,4 +16,22 @@ if __name__ == "__main__":
     # Tests will run your command using a system call.
     # To test your program with arguments, run it from the command line
     # (see README.md for more details)
-    pass
+    import argparse
+    import numpy as np
+
+
+    def scale_transform(infile, outfile):
+
+        data = np.loadtxt(infile, delimiter=',')
+
+
+        zero_mean = data - np.mean(data, axis=0)
+        processed = zero_mean / np.std(zero_mean, axis=0)
+
+
+        np.savetxt(outfile, processed, delimiter=',')
+
+
+
+
+

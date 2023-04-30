@@ -18,11 +18,11 @@ def test_ex_5_2_removes_mean(processed):
     mu = processed.mean()
 
     # Assert that error is less than 1%
-    assert np.abs(mu) < 0.01
-
+    assert np,abs(mu) < 0.01
 
 def test_ex_5_2_scales_unit_std(processed):
     sigma = processed.std()
 
     # Assert that error is less than 1%
-    assert np.abs(1 - sigma) < 0.01
+    assert np.abs(1-sigma) < 0.01
+
